@@ -1,0 +1,10 @@
+build/
+node_modules/
+package-lock.json
+package.json
+assets/
+.git*
+.prettier*
+.stylelintrc
+.eslintrc.js
+webpack/*
