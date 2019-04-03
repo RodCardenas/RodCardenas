@@ -49,7 +49,7 @@ module.exports = {
     'class-methods-use-this': [
       'error',
       {
-        exceptMethods: ['bindWithoutThis'],
+        exceptMethods: ['bindWithoutThis', 'render'],
       },
     ],
     'import/imports-first': 0,
@@ -100,12 +100,14 @@ module.exports = {
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
 
-    // From ours
+    // Rods
+    'react/prefer-stateless-function': 0,
+    'react/sort-comp': 0,
     'prefer-destructuring': [
       'error',
       {
         array: false,
-        object: true,
+        object: false,
       },
     ],
     'linebreak-style': ['error', 'unix'],
