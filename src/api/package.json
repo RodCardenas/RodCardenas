@@ -1,0 +1,24 @@
+{
+  "name": "rodcardenas-api",
+  "version": "0.0.1",
+  "description": "RodCardenas's personal site's api.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodCardenas/rodcardenas.git"
+  },
+  "keywords": [
+    "RodCardenas"
+  ],
+  "author": "Rodrigo Cardenas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RodCardenas/rodcardenas/issues"
+  },
+  "homepage": "https://github.com/RodCardenas/rodcardenas#readme",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.2.1"
+  }
+}
