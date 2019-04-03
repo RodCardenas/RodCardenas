@@ -11,11 +11,17 @@ let enterprises = [
   { id: 2, name: "Microsoft" },
 ];
 
+let fruits = [
+  { id: 1, color: "Banana", taste: 7, employeeId: 1 },
+  { id: 2, color: "Mango", taste: 10, employeeId: 1 },
+];
+
 // The GraphQL schema
 const typeDefs = gql`
   type Query {
     employees: [Employee]
     enterprises: [Enterprise]
+    fruits: [Fruit]
 
     employee(name: String): Employee
     enterprise(name: String): Enterprise
@@ -26,12 +32,20 @@ const typeDefs = gql`
     age: Int
     name: String
     enterpriseId: ID
+    fruits: [Fruit]
   }
 
   type Enterprise {
     id: ID
     name: String
     employees: [Employee]
+  }
+
+  type Fruit {
+    id: ID
+    color: String
+    taste: Int
+    employeeId: ID
   }
 `;
 
@@ -54,6 +68,7 @@ const resolvers = {
         }
       });
     },
+    fruits: () => fruits,
   },
   Enterprise: {
     employees: (parent) => {
@@ -67,7 +82,21 @@ const resolvers = {
 
       return enterpriseEmployees;
     }
-  }
+  },
+  Employee: {
+    fruits: (parent) => {
+      const employeesFruits = [];
+
+      fruits.forEach(fruit => {
+        if (fruit.employeeId === parent.id) {
+          employeesFruits.push(fruit);
+        }
+      });
+
+      return employeesFruits;
+    }
+  },
+
 };
 
 const server = new ApolloServer({
