@@ -5,7 +5,7 @@
   "scripts": {
     "analyze": "webpack --config webpack/webpack.prod.js --profile --json > stats.json",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
-    "dev": "cross-env NODE_ENV=development node server",
+    "dev": "cross-env NODE_ENV=development node server --port 39093",
     "dev:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
     "lint": "./node_modules/.bin/eslint app --ext js,jsx",
     "lintfile": "./node_modules/.bin/eslint --ext js,jsx ",
