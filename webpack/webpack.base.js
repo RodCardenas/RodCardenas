@@ -18,7 +18,7 @@ module.exports = options => ({
           emitError: true,
           emitWarning: true,
           failOnWarning: false,
-          failOnError: true,
+          failOnError: false,
         },
       },
       {
@@ -115,7 +115,6 @@ module.exports = options => ({
     }),
     new webpack.DefinePlugin({
       OS: JSON.stringify(process.platform),
-      LOCAL: false,
     }),
   ]),
   resolve: {
