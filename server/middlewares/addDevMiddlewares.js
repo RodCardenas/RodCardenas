@@ -24,11 +24,14 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
 
-
   const fs = middleware.fileSystem;
 
-  // Serve aset files from virtualized assets path
+  // Serve asset files from virtualized assets path
   app.use('/assets', express.static(path.join(__dirname, '../../assets')));
+  app.use(
+    '/favicons',
+    express.static(path.join(__dirname, '../../assets/favicons')),
+  );
   app.get('*', (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
       if (err) {
