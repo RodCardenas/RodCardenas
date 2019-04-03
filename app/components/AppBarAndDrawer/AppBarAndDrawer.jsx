@@ -20,6 +20,7 @@ import { NavLink } from 'react-router-dom';
 import Routes from '../../routes';
 
 import Logo from '../../../assets/img/logo.png';
+import './AppBarAndDrawer.css';
 
 class AppBarAndDrawer extends React.Component {
   constructor(props) {
@@ -63,7 +64,9 @@ class AppBarAndDrawer extends React.Component {
   getDrawer() {
     return (
       <React.Fragment>
-        <img id="logo" src={Logo} alt="rodcardenas-logo" />
+        <div id="drawer-logo-container">
+          <img id="drawer-logo" src={Logo} alt="rodcardenas-logo" />
+        </div>
         <Divider />
         <List>
           {Routes.map(route => (

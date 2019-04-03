@@ -1,0 +1,13 @@
+#drawer-logo-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 64px;
+
+  background-color: #424242;
+}
+
+#drawer-logo {
+  height: inherit;
+  padding: 5px 0;
+}
