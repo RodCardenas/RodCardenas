@@ -12,4 +12,4 @@ app.use(function(req, res, next) {
 });
 app.use('/posts', posts);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Api listening on port ${port}!`))
