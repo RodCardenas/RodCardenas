@@ -5,7 +5,7 @@ export function fetchAllPosts() {
   return dispatch => {
     axios({
       method: 'GET',
-      url: 'https://rodcardenas.xyz:5555/posts',
+      url: 'https://rodcardenas.xyz/api/posts',
     }).then(
       result => {
         const posts = result.data;
