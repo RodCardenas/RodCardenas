@@ -2,14 +2,14 @@ import React from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import TriathlonsIcon from '@material-ui/icons/AccessibilityNew';
 
-import Home from './components/Home/Home';
+import HomeContainer from './components/Home/HomeContainer';
 import Triathlons from './components/Triathlons/Triathlons';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: HomeContainer,
     exact: true,
     icon: <HomeIcon />,
   },
