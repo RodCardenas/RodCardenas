@@ -15,7 +15,10 @@ app.use(function(req, res, next) {
 });
 app.use('/posts', posts);
 
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.rodcardenas.xyz/privkey.pem').toString();
+const certificate = fs.readFileSync('/etc/letsencrypt/live/www.rodcardenas.xyz/fullchain.pem').toString();
+
 https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/www.rodcardenas.xyz/fullchain.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/www.rodcardenas.xyz/privkey.pem')
+  key: privateKey,
+  cert: certificate
 }, app).listen(port, () => console.log(`Api listening on port ${port}!`))
